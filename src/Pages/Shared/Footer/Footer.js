@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/logo.png';
-import { FaBeer, FaArrowRight, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -11,13 +10,13 @@ const Footer = () => {
                 <p className='text-xl'>Copyright © 2022 - All right reserved</p>
             </div>
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end text-3xl">
-                <a href='https://www.facebook.com/' target="_blank">
+                <a href='https://www.facebook.com/' target="_blank" rel="noreferrer">
                     <FaFacebook />
                 </a>
-                <a href='https://www.instagram.com/' target="_blank">
+                <a href='https://www.instagram.com/' target="_blank" rel="noreferrer">
                     <FaInstagram />
                 </a>
-                <a href='https://www.linkedin.com/' target="_blank">
+                <a href='https://www.linkedin.com/' target="_blank" rel="noreferrer">
                     <FaLinkedin />
                 </a>
             </div>
