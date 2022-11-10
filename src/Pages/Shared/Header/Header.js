@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
     }
 
     return (
-        <div className="navbar bg-base-100 justify-between w-4/5 mx-auto p-5">
+        <div className="navbar bg-base-100 justify-between w-4/5 mx-auto p-5 border-b-2 border-lime-500">
             <div className="navbar-start justify-between mx-auto lg:mx-0">
                 <div className='flex items-center'>
 
@@ -21,7 +21,7 @@ const Header = () => {
                         <img className='w-20 h-16' src={logo} alt="" />
                     </div>
 
-                    <a className="btn btn-ghost normal-case text-3xl font-bold">Homely <span className='text-lime-500'>Taste</span></a>
+                    <Link to='/' className="btn btn-ghost normal-case text-3xl font-bold">Homely <span className='text-lime-500'>Taste</span></Link>
 
                 </div>
                 <div className="dropdown">
