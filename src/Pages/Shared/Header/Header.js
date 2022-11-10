@@ -31,6 +31,12 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-xl font-semibold">
                         <li>
                             <NavLink
+                                to='/'
+                                style={({ isActive }) => isActive ? activeStyle : inActiveStyle}
+                            >Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink
                                 to='/services'
                                 style={({ isActive }) => isActive ? activeStyle : inActiveStyle}
                             >Services</NavLink>
@@ -47,6 +53,12 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 text-xl font-semibold">
+                    <li>
+                        <NavLink
+                            to='/'
+                            style={({ isActive }) => isActive ? activeStyle : inActiveStyle}
+                        >Home</NavLink>
+                    </li>
                     <li>
                         <NavLink
                             to='/services'
