@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cooking from '../../assets/cooking.gif';
-import { FaBeer, FaArrowRight } from 'react-icons/fa';
 
 const About = () => {
     return (
