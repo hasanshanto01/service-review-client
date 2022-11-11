@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ServiceDetails from './ServiceDetails';
 import ServiceReview from './ServiceReview';
@@ -6,12 +6,20 @@ import ServiceReview from './ServiceReview';
 const DetailsContainer = () => {
 
     const service = useLoaderData();
-    console.log(service);
+    // console.log(service);
+
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
 
     return (
-        <div className='border border-yellow-600 w-4/5 mx-auto'>
+        <div className='w-4/5 mx-auto'>
             <ServiceDetails service={service}></ServiceDetails>
-            <ServiceReview></ServiceReview>
+            <ServiceReview reviews={reviews}></ServiceReview>
         </div>
     );
 };

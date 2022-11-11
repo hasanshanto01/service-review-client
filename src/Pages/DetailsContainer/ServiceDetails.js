@@ -7,12 +7,12 @@ const ServiceDetails = ({ service }) => {
     const { title, imgURL, price, rating, description } = service;
 
     return (
-        <div className='border border-red-500 p-5'>
+        <div className='p-5 pt-0'>
+            <h2 className='text-center text-4xl font-bold mb-5'>{title}</h2>
             <div>
                 <img src={imgURL} alt="" className='w-full rounded-xl' style={{ height: '500px' }} />
             </div>
             <div className='my-5'>
-                <h2 className='text-4xl font-bold'>{title}</h2>
                 <div className='flex justify-between items-center my-3'>
                     <h4 className='text-2xl font-semibold'>Price: <span className='font-bold'>{price}</span>TK.</h4>
                     <p className='text-lg font-semibold flex items-center'>
