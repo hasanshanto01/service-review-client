@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import login from '../../assets/login.webp';
+import { authContext } from '../../context/AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
+
+    const { createUser } = useContext(authContext);
+
+    const handleRegister = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        // console.log(name, email, password);
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+
+                toast.success('Registered successfully');
+                form.reset();
+            })
+            .catch(error => console.error(error))
+
+    };
+
     return (
         <div className='flex flex-col lg:flex-row w-4/5 mx-auto my-10'>
 
@@ -12,15 +38,16 @@ const Register = () => {
             <div className='w-full lg:w-1/2'>
                 <h2 className='text-lime-500 text-3xl text-center font-semibold mt-10 lg:mt-14'>Register</h2>
 
-                <form className='border border-lime-500 rounded-xl w-4/5 mx-auto my-5 p-5'>
+                <form onSubmit={handleRegister} className='border border-lime-500 rounded-xl w-4/5 mx-auto my-5 p-5'>
                     <input type="text" name='name' placeholder="Enter name" className="input input-bordered w-full mb-4" />
                     <input type="email" name='email' placeholder="Enter email" className="input input-bordered w-full" required />
-                    <input type="password" placeholder="Enter password" className="input input-bordered w-full my-4" required />
+                    <input type="password" name='password' placeholder="Enter password" className="input input-bordered w-full my-4" required />
 
                     <p className='mt-2 mb-6 text-center text-lg font-semibold'>Have an account? <Link to='/login' className='text-lime-500'>Login</Link> </p>
 
                     <div className='w-3/5 mx-auto'>
                         <button className='btn bg-lime-300 hover:bg-lime-500 border-0 w-full'>Register</button>
+                        <Toaster />
                     </div>
                 </form>
 
