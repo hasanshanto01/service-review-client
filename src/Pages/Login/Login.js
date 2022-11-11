@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import login from '../../assets/login.webp';
 import { FaGoogle } from 'react-icons/fa';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
 
@@ -21,7 +22,10 @@ const Login = () => {
                 const user = result.user;
                 // console.log(user);
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                toast.error(error.message);
+            })
     };
 
     const handleGoogleLogIn = () => {
@@ -50,6 +54,7 @@ const Login = () => {
 
                     <div className='w-3/5 mx-auto'>
                         <button className='btn bg-lime-400 hover:bg-lime-600 border-0 w-full'>Login</button>
+                        <Toaster />
                     </div>
                 </form>
 

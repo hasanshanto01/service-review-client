@@ -14,7 +14,7 @@ const AddService = () => {
         const description = form.description.value;
 
         if (isNaN(price) || isNaN(rating)) {
-            return toast('Price and Rating value must be number')
+            return toast.error('Price and Rating must be number')
         }
 
         const service = {

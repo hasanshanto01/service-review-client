@@ -6,20 +6,24 @@ import ServiceReview from './ServiceReview';
 const DetailsContainer = () => {
 
     const service = useLoaderData();
-    // console.log(service);
+    // const { _id } = service;
+    // console.log(_id);
 
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch(`http://localhost:5000/reviews/${service._id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, [service._id])
 
     return (
         <div className='w-4/5 mx-auto'>
             <ServiceDetails service={service}></ServiceDetails>
-            <ServiceReview reviews={reviews}></ServiceReview>
+
+            <hr className='border-dotted border-t-2 border-lime-600 w-full mx-auto' />
+
+            <ServiceReview service={service} reviews={reviews}></ServiceReview>
         </div>
     );
 };

@@ -6,13 +6,14 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
 
-    const { createUser } = useContext(authContext);
+    const { createUser, setUser } = useContext(authContext);
 
     const handleRegister = event => {
         event.preventDefault();
 
         const form = event.target;
         const name = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
         // console.log(name, email, password);
@@ -20,6 +21,9 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                user.displayName = name;
+                user.photoURL = photoURL;
+                setUser(user);
                 // console.log(user);
 
                 toast.success('Registered successfully');
@@ -36,10 +40,11 @@ const Register = () => {
                 <img src={login} alt="" className='w-full' />
             </div>
             <div className='w-full lg:w-1/2'>
-                <h2 className='text-lime-600 text-3xl text-center font-semibold mt-10 lg:mt-14'>Register</h2>
+                <h2 className='text-lime-600 text-3xl text-center font-semibold mt-10 lg:mt-4'>Register</h2>
 
                 <form onSubmit={handleRegister} className='border border-lime-600 rounded-xl w-4/5 mx-auto my-5 p-5'>
                     <input type="text" name='name' placeholder="Enter name" className="input input-bordered w-full mb-4" />
+                    <input type="text" name='photoURL' placeholder="Enter photoURL" className="input input-bordered w-full mb-4" />
                     <input type="email" name='email' placeholder="Enter email" className="input input-bordered w-full" required />
                     <input type="password" name='password' placeholder="Enter password" className="input input-bordered w-full my-4" required />
 
