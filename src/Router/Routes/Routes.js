@@ -7,6 +7,7 @@ import Services from "../../Pages/Services/Services";
 import Register from "../../Pages/Register/Register";
 import AddService from "../../Pages/AddService/AddService";
 import MyReview from "../../Pages/MyReview/MyReview";
+import DetailsContainer from "../../Pages/DetailsContainer/DetailsContainer";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,13 @@ const router = createBrowserRouter([
                     return fetch('https://service-review-server-orcin.vercel.app/services/all');
                 },
                 element: <Services></Services>
+            },
+            {
+                path: '/services/:id',
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/services/${params.id}`)
+                },
+                element: <DetailsContainer></DetailsContainer>
             },
             {
                 path: '/login',

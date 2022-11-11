@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
 
-    const { title, imgURL, price, rating, description } = service;
+    const { _id, title, imgURL, price, rating, description } = service;
 
     return (
         <div className="card card-compact w-full bg-base-100 shadow-xl">
@@ -16,7 +17,7 @@ const ServiceCard = ({ service }) => {
                         <FaStar className='ml-1 text-yellow-400' />
                     </p>
                 </div>
-                <p className='text-lg'>
+                <p className='text-lg text-justify'>
                     {description.slice(0, 100)}
                 </p>
                 <div>
@@ -26,7 +27,10 @@ const ServiceCard = ({ service }) => {
                 <div className="card-actions justify-center mt-3">
 
                     <button className="btn bg-lime-400 hover:bg-lime-600 border-0">Order Now</button>
-                    <button className="btn bg-lime-400 hover:bg-lime-600 border-0 ml-2">View Details</button>
+
+                    <Link to={`/services/${_id}`}>
+                        <button className="btn bg-lime-400 hover:bg-lime-600 border-0 ml-2">View Details</button>
+                    </Link>
 
                 </div>
             </div>
