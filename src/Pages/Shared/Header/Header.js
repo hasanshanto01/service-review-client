@@ -53,7 +53,7 @@ const Header = () => {
                         >My Review</NavLink>
                     </li>
                     <li>
-                        <button onClick={handleLogOut} className='btn bg-lime-200 hover:bg-lime-500 border-0 ml-3'>Log Out</button>
+                        <button onClick={handleLogOut} className='btn bg-lime-200 hover:bg-lime-600 border-0 ml-3'>Log Out</button>
                     </li>
                 </>
                 :
@@ -69,7 +69,7 @@ const Header = () => {
 
 
     return (
-        <div className="navbar bg-base-100 justify-between w-4/5 mx-auto mb-10 p-5 border-b-2 border-lime-500">
+        <div className="navbar bg-base-100 justify-between w-4/5 mx-auto mb-10 p-5 border-b-2 border-lime-600">
             <div className="navbar-start justify-between mx-auto lg:mx-0">
                 <div className='flex items-center'>
 
@@ -77,7 +77,7 @@ const Header = () => {
                         <img className='w-20 h-16' src={logo} alt="" />
                     </div>
 
-                    <Link to='/' className="btn btn-ghost normal-case text-3xl font-bold">Homely <span className='text-lime-500'>Taste</span></Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-3xl font-bold">Homely <span className='text-lime-600'>Taste</span></Link>
 
                 </div>
                 <div className="dropdown">

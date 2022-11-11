@@ -15,10 +15,16 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
+                loader: () => {
+                    return fetch('https://service-review-server-orcin.vercel.app/services');
+                },
                 element: <Home></Home>
             },
             {
                 path: '/services',
+                loader: () => {
+                    return fetch('https://service-review-server-orcin.vercel.app/services/all');
+                },
                 element: <Services></Services>
             },
             {

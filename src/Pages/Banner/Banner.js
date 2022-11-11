@@ -28,7 +28,7 @@ const bannerItems = [
 
 const Banner = () => {
     return (
-        <div className="carousel w-4/5 mx-auto rounded-lg">
+        <div className="carousel w-4/5 mx-auto my-10 rounded-lg">
 
             {
                 bannerItems.map(bannerItem => <BannerItem
