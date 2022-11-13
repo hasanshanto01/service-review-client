@@ -6,7 +6,7 @@ const AddReview = ({ service }) => {
 
     const { user } = useContext(authContext);
     // console.log(user);
-    const { _id, title } = service;
+    const { _id, title, imgURL } = service;
     // console.log(id);
 
 
@@ -24,11 +24,10 @@ const AddReview = ({ service }) => {
         const review = {
             serviceId: _id,
             serviceName: title,
-            reviewer: {
-                name: user.displayName,
-                email: user.email,
-                img: user.photoURL,
-            },
+            serviceImg: imgURL,
+            userName: user.displayName,
+            email: user.email,
+            userImg: user.photoURL,
             rating,
             message: reviewMessage
         }
@@ -47,6 +46,7 @@ const AddReview = ({ service }) => {
             })
         toast.success('Service added successfully');
         form.reset();
+        window.location.reload();
 
     };
 

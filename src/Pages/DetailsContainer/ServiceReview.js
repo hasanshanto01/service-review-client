@@ -18,11 +18,11 @@ const ServiceReview = ({ service, reviews }) => {
 
                 {
                     reviews.length === 0 ?
-                        <p className='text-2xl font-semibold'>No reviews found!</p>
+                        <p className='text-2xl font-semibold'>No reviews available!</p>
                         :
                         <>
                             <div className="overflow-x-auto w-full">
-                                <table className="table w-full">
+                                <table className="table table-zebra w-full">
 
                                     <thead>
                                         <tr>
@@ -32,12 +32,14 @@ const ServiceReview = ({ service, reviews }) => {
                                         </tr>
                                     </thead>
 
-                                    {
-                                        reviews.map(review => <ServiceReviewTable
-                                            key={review._id}
-                                            review={review}
-                                        ></ServiceReviewTable>)
-                                    }
+                                    <tbody>
+                                        {
+                                            reviews.map(review => <ServiceReviewTable
+                                                key={review._id}
+                                                review={review}
+                                            ></ServiceReviewTable>)
+                                        }
+                                    </tbody>
 
                                 </table>
                             </div>
