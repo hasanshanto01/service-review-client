@@ -4,7 +4,7 @@ import ServiceReviewTable from './ServiceReviewTable';
 
 const ServiceReview = ({ service, reviews }) => {
 
-    console.log(reviews);
+    // console.log(reviews);
 
     return (
         <div className='p-5'>

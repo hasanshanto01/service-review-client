@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
 
     const services = useLoaderData();
-    console.log(services);
+    // console.log(services);
 
     return (
         <div className='w-4/5 mx-auto my-10'>

@@ -3,7 +3,7 @@ import Services from '../Services/Services';
 import About from '../About/About';
 import ReviewSection from '../ReviewSection/ReviewSection';
 import Banner from '../Banner/Banner';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 

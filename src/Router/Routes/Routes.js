@@ -17,14 +17,14 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 loader: () => {
-                    return fetch('https://service-review-server-orcin.vercel.app/services');
+                    return fetch('http://localhost:5000/services');
                 },
                 element: <Home></Home>
             },
             {
                 path: '/services',
                 loader: () => {
-                    return fetch('https://service-review-server-orcin.vercel.app/services/all');
+                    return fetch('http://localhost:5000/services/all');
                 },
                 element: <Services></Services>
             },

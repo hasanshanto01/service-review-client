@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../assets/login.webp';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
@@ -7,6 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Register = () => {
 
     const { createUser, setUser } = useContext(authContext);
+    const navigate = useNavigate();
 
     const handleRegister = event => {
         event.preventDefault();
@@ -28,6 +29,7 @@ const Register = () => {
 
                 toast.success('Registered successfully');
                 form.reset();
+                navigate('/');
             })
             .catch(error => console.error(error))
 

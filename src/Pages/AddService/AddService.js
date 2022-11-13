@@ -24,7 +24,7 @@ const AddService = () => {
             rating,
             description
         };
-        console.log(service);
+        // console.log(service);
 
         fetch('http://localhost:5000/services/all', {
             method: 'POST',

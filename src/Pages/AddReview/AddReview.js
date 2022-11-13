@@ -31,7 +31,7 @@ const AddReview = ({ service }) => {
             rating,
             message: reviewMessage
         }
-        console.log(review);
+        // console.log(review);
 
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
