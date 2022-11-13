@@ -1,7 +1,10 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { tabTitle } from '../../utils/DynamicRoute';
 
 const AddService = () => {
+
+    tabTitle('Add Service - Homely Taste');
 
     const handleAddService = event => {
         event.preventDefault();

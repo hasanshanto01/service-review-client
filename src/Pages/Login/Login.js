@@ -4,8 +4,11 @@ import login from '../../assets/login.webp';
 import { FaGoogle } from 'react-icons/fa';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { tabTitle } from '../../utils/DynamicRoute';
 
 const Login = () => {
+
+    tabTitle('Login - Homely Taste')
 
     const { logIn, googleLogIn } = useContext(authContext);
 

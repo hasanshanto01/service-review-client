@@ -77,7 +77,7 @@ const Header = () => {
                         <img className='w-20 h-16' src={logo} alt="" />
                     </div>
 
-                    <Link to='/' className="btn btn-ghost normal-case text-3xl font-bold">Homely <span className='text-lime-600'>Taste</span></Link>
+                    <Link to='/' className="text-3xl font-bold">Homely <span className='text-lime-600'>Taste</span></Link>
 
                 </div>
                 <div className="dropdown">

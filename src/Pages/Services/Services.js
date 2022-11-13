@@ -1,8 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { tabTitle } from '../../utils/DynamicRoute';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
+
+    tabTitle('Services - Homely taste');
 
     const services = useLoaderData();
     // console.log(services);

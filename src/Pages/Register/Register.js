@@ -3,8 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import login from '../../assets/login.webp';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { tabTitle } from '../../utils/DynamicRoute';
 
 const Register = () => {
+
+    tabTitle('Register - Homely Taste');
 
     const { createUser, setUser } = useContext(authContext);
     const navigate = useNavigate();

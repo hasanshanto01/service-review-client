@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
+import { tabTitle } from '../../utils/DynamicRoute';
 import MyReviewTable from './MyReviewTable';
 
 const MyReview = () => {
+
+    tabTitle('Reviews - Homely Taste');
 
     const { user } = useContext(authContext);
     // console.log(user);

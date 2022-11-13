@@ -4,8 +4,11 @@ import About from '../About/About';
 import ReviewSection from '../ReviewSection/ReviewSection';
 import Banner from '../Banner/Banner';
 import { Link } from 'react-router-dom';
+import { tabTitle } from '../../utils/DynamicRoute';
 
 const Home = () => {
+
+    tabTitle('Homely Taste');
 
     return (
         <div>

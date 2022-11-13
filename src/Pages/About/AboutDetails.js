@@ -1,6 +1,10 @@
 import React from 'react';
+import { tabTitle } from '../../utils/DynamicRoute';
 
 const AboutDetails = () => {
+
+    tabTitle('About - Homely Taste');
+
     return (
         <div className='w-4/5 mx-auto px-10'>
             <h2 className='text-center text-lime-600 text-3xl font-semibold'>About Us</h2>
