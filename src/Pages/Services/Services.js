@@ -5,7 +5,7 @@ import ServiceCard from './ServiceCard';
 
 const Services = () => {
 
-    tabTitle('Services - Homely taste');
+    // tabTitle('Services - Homely taste');
 
     const services = useLoaderData();
     // console.log(services);

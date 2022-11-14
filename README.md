@@ -1,3 +1,13 @@
+# Project Name: Homely Taste(An service review website)
+### Live-Site:
+## Features of this website:
+* You can see services 
+* You can Add Service if you are logged in
+* You also can give reviwes if you are logged in
+* You can edit or delete your reviews if you are logged in
+* You can see our blog
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

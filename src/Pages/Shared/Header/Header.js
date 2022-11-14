@@ -36,6 +36,12 @@ const Header = () => {
                 style={({ isActive }) => isActive ? activeStyle : inActiveStyle}
             >Services</NavLink>
         </li>
+        <li>
+            <NavLink
+                to='/blog'
+                style={({ isActive }) => isActive ? activeStyle : inActiveStyle}
+            >Blog</NavLink>
+        </li>
 
         {
             user?.email ?

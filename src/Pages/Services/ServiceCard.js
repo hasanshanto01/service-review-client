@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceCard = ({ service }) => {
@@ -9,16 +10,18 @@ const ServiceCard = ({ service }) => {
 
     return (
         <div className="card card-compact w-full bg-base-100 shadow-xl">
+
             <PhotoProvider
                 speed={() => 800}
                 easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}
             >
-                <PhotoView>
+                <PhotoView src={imgURL}>
                     <figure>
                         <img src={imgURL} alt="" style={{ objectFit: 'cover' }} />
                     </figure>
                 </PhotoView>
             </PhotoProvider>
+
             <div className="card-body">
                 <div>
                     <h2 className="card-title text-3xl font-bold">{title}</h2>

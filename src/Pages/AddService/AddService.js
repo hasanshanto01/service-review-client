@@ -4,7 +4,7 @@ import { tabTitle } from '../../utils/DynamicRoute';
 
 const AddService = () => {
 
-    tabTitle('Add Service - Homely Taste');
+    // tabTitle('Add Service - Homely Taste');
 
     const handleAddService = event => {
         event.preventDefault();

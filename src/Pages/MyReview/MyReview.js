@@ -5,32 +5,32 @@ import MyReviewTable from './MyReviewTable';
 
 const MyReview = () => {
 
-    tabTitle('Reviews - Homely Taste');
+    // tabTitle('Reviews - Homely Taste');
 
     const { user } = useContext(authContext);
-    // console.log(user);
+    // console.log(user.email);
 
-    const [reviews, setReviews] = useState([]);
-    // console.log(reviews);
+    const [myReviews, setMyReviews] = useState([]);
+    // console.log(myReviews);
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/reviews?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
-                setReviews(data);
+                setMyReviews(data);
             })
     }, [user?.email]);
 
     return (
         <div className='w-4/5 mx-auto'>
-            <h2 className='text-center text-3xl font-semibold text-lime-600 mb-5'>Reviews: {reviews.length}</h2>
+            <h2 className='text-center text-3xl font-semibold text-lime-600 mb-5'>Reviews: {myReviews.length}</h2>
 
             <div>
 
                 {
-                    reviews.length === 0 ?
+                    myReviews.length === 0 ?
                         <p className='text-center text-2xl font-semibold'>No reviews added yet!</p>
                         :
                         <>
@@ -46,7 +46,7 @@ const MyReview = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            reviews.map(review => <MyReviewTable
+                                            myReviews.map(review => <MyReviewTable
                                                 key={review._id}
                                                 review={review}
                                             // handleDeleteReview={handleDeleteReview}

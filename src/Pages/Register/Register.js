@@ -7,7 +7,7 @@ import { tabTitle } from '../../utils/DynamicRoute';
 
 const Register = () => {
 
-    tabTitle('Register - Homely Taste');
+    // tabTitle('Register - Homely Taste');
 
     const { createUser, setUser } = useContext(authContext);
     const navigate = useNavigate();

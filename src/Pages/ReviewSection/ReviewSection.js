@@ -12,7 +12,7 @@ const ReviewSection = () => {
     const pages = Math.ceil(count / size);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?page=${page}&size=${size}`)
+        fetch(`http://localhost:5000/reviews/all?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

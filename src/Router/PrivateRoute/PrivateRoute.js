@@ -9,10 +9,11 @@ const PrivateRoute = ({ children }) => {
 
 
     if (loading) {
-        <div className='text-center'>
+        return <div className='text-center'>
             <button className="btn loading bg-lime-600 border-0">loading</button>
         </div>
     }
+
 
     if (user) {
         return children;
