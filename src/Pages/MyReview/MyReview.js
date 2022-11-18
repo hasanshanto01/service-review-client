@@ -5,7 +5,7 @@ import MyReviewTable from './MyReviewTable';
 
 const MyReview = () => {
 
-    // tabTitle('Reviews - Homely Taste');
+    tabTitle('Reviews');
 
     const { user } = useContext(authContext);
     // console.log(user.email);
@@ -15,7 +15,7 @@ const MyReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user.email}`)
+        fetch(`https://service-review-server-orcin.vercel.app/reviews?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

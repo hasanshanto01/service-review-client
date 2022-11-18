@@ -31,9 +31,9 @@ const AddReview = ({ service }) => {
             rating,
             message: reviewMessage
         }
-        // console.log(review);
+        console.log(review);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://service-review-server-orcin.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,11 +42,11 @@ const AddReview = ({ service }) => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
             })
         toast.success('Service added successfully');
         form.reset();
-        window.location.reload();
+        // window.location.reload();
 
     };
 

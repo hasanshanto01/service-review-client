@@ -12,7 +12,7 @@ const ReviewSection = () => {
     const pages = Math.ceil(count / size);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/all?page=${page}&size=${size}`)
+        fetch(`https://service-review-server-orcin.vercel.app/reviews/all?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -25,14 +25,19 @@ const ReviewSection = () => {
         <div className='w-4/5 mx-auto'>
             <h2 className='text-center text-lime-600 text-3xl font-semibold'>You can see reviews</h2>
 
-            <div className='grid grid-cols-3 gap-10 my-10'>
-                {
-                    reviews.map(review => <ReviewCard
-                        key={review._id}
-                        review={review}
-                    ></ReviewCard>)
-                }
-            </div>
+            {
+                reviews.length === 0 ?
+                    <p className='text-center text-2xl mt-8'>No reviews available!</p>
+                    :
+                    <div className='grid grid-cols-3 gap-10 my-10'>
+                        {
+                            reviews.map(review => <ReviewCard
+                                key={review._id}
+                                review={review}
+                            ></ReviewCard>)
+                        }
+                    </div>
+            }
 
             <div className='text-center'>
                 {

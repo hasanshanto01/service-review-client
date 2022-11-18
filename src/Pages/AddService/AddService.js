@@ -4,7 +4,7 @@ import { tabTitle } from '../../utils/DynamicRoute';
 
 const AddService = () => {
 
-    // tabTitle('Add Service - Homely Taste');
+    tabTitle('Add Service');
 
     const handleAddService = event => {
         event.preventDefault();
@@ -29,7 +29,7 @@ const AddService = () => {
         };
         // console.log(service);
 
-        fetch('http://localhost:5000/services/all', {
+        fetch('https://service-review-server-orcin.vercel.app/services/all', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

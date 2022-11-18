@@ -8,7 +8,7 @@ import { tabTitle } from '../../utils/DynamicRoute';
 
 const Login = () => {
 
-    tabTitle('Login - Homely Taste')
+    tabTitle('Login');
 
     const { logIn, googleLogIn } = useContext(authContext);
 

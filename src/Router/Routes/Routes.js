@@ -10,6 +10,7 @@ import MyReview from "../../Pages/MyReview/MyReview";
 import DetailsContainer from "../../Pages/DetailsContainer/DetailsContainer";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Blog from "../../Pages/Blog/Blog";
+import EditMyReview from "../../Pages/MyReview/EditMyReview";
 
 const router = createBrowserRouter([
     {
@@ -19,21 +20,21 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 loader: () => {
-                    return fetch('http://localhost:5000/services');
+                    return fetch(' https://service-review-server-orcin.vercel.app/services');
                 },
                 element: <Home></Home>
             },
             {
                 path: '/services',
                 loader: () => {
-                    return fetch('http://localhost:5000/services/all');
+                    return fetch(' https://service-review-server-orcin.vercel.app/services/all');
                 },
                 element: <Services></Services>
             },
             {
                 path: '/services/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/services/${params.id}`)
+                    return fetch(` https://service-review-server-orcin.vercel.app/services/${params.id}`)
                 },
                 element: <DetailsContainer></DetailsContainer>
             },
@@ -56,6 +57,13 @@ const router = createBrowserRouter([
             {
                 path: '/myreview',
                 element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
+            },
+            {
+                path: '/reviews/edit/:id',
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/reviews/edit/${params.id}`)
+                },
+                element: <EditMyReview></EditMyReview>
             },
             {
                 path: '/blog',

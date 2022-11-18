@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cooking from '../../assets/cooking.gif';
+import { tabTitle } from '../../utils/DynamicRoute';
 
 const About = () => {
+
+    tabTitle('Add Service');
+
     return (
         <div className='flex items-center w-4/5 mx-auto my-20'>
 

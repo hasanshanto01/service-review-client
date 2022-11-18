@@ -11,8 +11,22 @@ const ReviewCard = ({ review }) => {
 
                 <div className="flex justify-between items-center">
                     <div>
-                        <img src={userImg ? userImg : <FaUserCircle />} alt="" className='w-12 h-12 rounded-full' />
-                        <h4 className='text-lg font-semibold'>{userName}</h4>
+                        <div>
+                            {
+                                userImg !== null ?
+                                    <img src={userImg} alt="" className="w-12 h-12 rounded-full" />
+                                    :
+                                    <FaUserCircle className='w-12 h-12' />
+                            }
+                        </div>
+                        <div className="font-bold">
+                            {
+                                userName !== null ?
+                                    userName
+                                    :
+                                    'Unknown'
+                            }
+                        </div>
                     </div>
                     <FaCommentDots className='w-8 h-8' />
                 </div>

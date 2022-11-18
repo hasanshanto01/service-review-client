@@ -8,7 +8,7 @@ import { tabTitle } from '../../utils/DynamicRoute';
 
 const Home = () => {
 
-    // tabTitle('Homely Taste');
+    tabTitle('Home');
 
     return (
         <div>

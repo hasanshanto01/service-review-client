@@ -1,3 +1,3 @@
-export const tabTitle = (newTitle) => {
-    return document.title = newTitle;
+export const tabTitle = newTitle => {
+    document.title = `${newTitle} - Homely Taste`;
 };
