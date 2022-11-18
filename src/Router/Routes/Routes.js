@@ -36,7 +36,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => {
                     return fetch(` https://service-review-server-orcin.vercel.app/services/${params.id}`)
                 },
-                element: <DetailsContainer></DetailsContainer>
+                element: <PrivateRoute><DetailsContainer></DetailsContainer></PrivateRoute>
             },
             {
                 path: '/login',
@@ -61,9 +61,9 @@ const router = createBrowserRouter([
             {
                 path: '/reviews/edit/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/reviews/edit/${params.id}`)
+                    return fetch(`https://service-review-server-orcin.vercel.app/reviews/edit/${params.id}`)
                 },
-                element: <EditMyReview></EditMyReview>
+                element: <PrivateRoute><EditMyReview></EditMyReview></PrivateRoute>
             },
             {
                 path: '/blog',

@@ -1,9 +1,9 @@
 # Project Name: Homely Taste(An service review website)
-### Live-Site:
+### Live-Site: https://service-review-client-240ae.web.app/
 ## Features of this website:
 * You can see services 
 * You can Add Service if you are logged in
-* You also can give reviwes if you are logged in
+* You also can give reviews if you are logged in
 * You can edit or delete your reviews if you are logged in
 * You can see our blog
 

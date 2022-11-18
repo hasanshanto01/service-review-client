@@ -5,7 +5,7 @@ import { authContext } from '../../context/AuthProvider/AuthProvider';
 const AddReview = ({ service }) => {
 
     const { user } = useContext(authContext);
-    // console.log(user);
+    console.log(user);
     const { _id, title, imgURL } = service;
     // console.log(id);
 

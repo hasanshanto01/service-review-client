@@ -31,7 +31,7 @@ const MyReviewTable = ({ review }) => {
 
                     if (data.deletedCount > 0) {
                         toast.success('Review deleted successfully');
-                        // window.location.reload();
+                        window.location.reload();
                     }
 
                 })
@@ -64,26 +64,6 @@ const MyReviewTable = ({ review }) => {
             </td>
             <td>
                 <div className='flex justify-end gap-x-4'>
-                    {/* <>
-
-                        
-                    <label htmlFor="my-modal-3" className="btn bg-lime-400 hover:bg-lime-600 border-0" onClick={() => handleEditReview(_id)}>Edit review</label>
-
-                    
-                    <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-                    <div className="modal">
-                        <div className="modal-box relative">
-                            <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-
-                            <form onSubmit={() => handleEditBtn(reviewId)} className='text-center'>
-                                <textarea className="textarea textarea-bordered w-4/5" placeholder="Edit your review" name='editedReview'></textarea>
-                                <br />
-                                <button type="submit" className='btn bg-lime-400 hover:bg-lime-600 border-0'>edit</button>
-                            </form>
-
-                        </div>
-                    </div>
-                </> */}
                     <button onClick={() => handleEditReview(_id)} className="btn bg-lime-400 hover:bg-lime-600 border-0 px-10">Edit</button>
                     <button onClick={() => handleDeleteReview(_id)} className="btn bg-red-400 hover:bg-red-600 border-0 px-10">Delete</button>
                     <Toaster />

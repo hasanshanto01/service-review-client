@@ -22,7 +22,7 @@ const EditMyReview = () => {
         };
         // console.log(editedMessage);
 
-        fetch(`http://localhost:5000/reviews/edit/${_id}`, {
+        fetch(`https://service-review-server-orcin.vercel.app/reviews/edit/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
