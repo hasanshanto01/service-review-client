@@ -1,8 +1,5 @@
 import React from 'react';
 import { tabTitle } from '../../utils/DynamicRoute';
-import login from '../../assets/login.webp';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
 
 const Blog = () => {
 

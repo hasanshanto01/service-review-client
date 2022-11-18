@@ -14,10 +14,10 @@ const MyReviewTable = ({ review }) => {
 
 
     const handleDeleteReview = id => {
-        console.log(id);
+        // console.log(id);
 
         const confirmMessage = window.confirm('Are you sure? You want to delete?');
-        console.log(confirmMessage);
+        // console.log(confirmMessage);
 
         if (confirmMessage === true) {
             // console.log('confirm bro');
